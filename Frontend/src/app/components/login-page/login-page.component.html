@@ -1,0 +1,20 @@
+<div class="centered-container">
+  <p-card header="Login">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="p-field">
+        <label for="email">Email:</label>
+        <input id="email" type="text" pInputText formControlName="email">
+      </div>
+      <div class="p-field">
+        <label for="password">Password:</label>
+        <input id="password" type="password" pInputText formControlName="password">
+      </div>
+      <p *ngIf="error" class="error-message">Invalid data!</p>
+      <div>
+        <button type="submit" pButton label="Login" [disabled]="!loginForm.valid"></button>
+        <button type="button" pButton label="Register" (click)="onRegister()"></button>
+      </div>
+    </form>
+  </p-card>
+  <ngx-loading [show]="load"></ngx-loading>
+</div>

@@ -1,0 +1,36 @@
+.centered-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p-card {
+  width: 350px;
+  padding: 20px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+
+.p-field {
+  margin-bottom: 0.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 0.8em;
+  margin-top: 0.25em;
+  padding: 6px;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  background-color: #ffe6e6;
+  width: 97%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}

@@ -1,0 +1,27 @@
+<div class="centered-container">
+  <p-card header="Register">
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <div class="p-field">
+        <label for="firstName">First name:</label>
+        <input id="firstName" type="text" pInputText formControlName="firstName">
+      </div>
+      <div class="p-field">
+        <label for="lastName">Last name:</label>
+        <input id="lastName" type="text" pInputText formControlName="lastName">
+      </div>
+      <div class="p-field">
+        <label for="email">Email:</label>
+        <input id="email" type="text" pInputText formControlName="email">
+      </div>
+      <div class="p-field">
+        <label for="password">Password:</label>
+        <input id="password" type="password" pInputText formControlName="password">
+      </div>
+      <p *ngIf="error" class="error-message">User already registered!</p>
+      <div class="register-button">
+        <button type="button" pButton label="Register" (click)="onRegister()"></button>
+      </div>
+    </form>
+  </p-card>
+  <ngx-loading [show]="load"></ngx-loading>
+</div>

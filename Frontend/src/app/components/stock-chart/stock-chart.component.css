@@ -1,0 +1,12 @@
+#chart-container_selector{
+  height: 30px !important;
+}
+
+.chart {
+  background-color: white;
+}
+
+#chart-container_seriesType-popup {
+  background: linear-gradient(to right, #D3D3D3, #D3D3D3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+}

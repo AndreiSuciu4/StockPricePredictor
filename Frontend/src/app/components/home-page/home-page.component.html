@@ -1,0 +1,40 @@
+<div class="full-page">
+
+  <div class="stock-chart-title">
+    <div class="stock-chart">
+      <app-stock-chart [stock]="selectedCompany.code"> </app-stock-chart>
+    </div>
+  </div>
+
+  <div class="stock-instruments-and-user-menu">
+    <div class="company-drop-down-and-button">
+      <label id="drop-down-label" for="company-dropdown">Select a company: </label>
+      <p-dropdown id="company-dropdown" [options]="companies" [(ngModel)]="selectedCompany" optionLabel="name" (onChange)="companyChanged()"></p-dropdown>
+      <p-button id="generate-button" label="Generate price" icon="pi pi-check" iconPos="right" (onClick)="generateValue()"></p-button>
+    </div>
+
+    <div class="generated-value" *ngIf="generatedValue !== -1">
+      <label for="generated-value-input">Predicted Close Price:</label>
+      <input id="generated-value-input" type="text" [(ngModel)]="generatedValue" readonly>
+    </div>
+
+    <div class="user-menu">
+      <div (click)="toggleDropdown()">
+        <img src="assets/user_icon.png" alt="User Icon">
+        <span class="fullname">{{ fullName }}</span>
+        <div class="logout-dropdown" *ngIf="dropdownVisible">
+          <button (click)="logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="notification" *ngIf="showNotification">
+      <div class="notification-message" *ngFor="let prediction of generatedPredictions">
+        <p> Stock: {{prediction.stock_name}} date: {{prediction.generated_date}} generated price: {{parseFloat(prediction.generated_price).toFixed(3)}} actual price: {{parseFloat(prediction.actual_price).toFixed(3)}}</p>
+      </div>
+      <button class="close-btn" (click)="showNotification = false">Close</button>
+    </div>
+
+  </div>
+  <ngx-loading [show]="load"></ngx-loading>
+</div>
