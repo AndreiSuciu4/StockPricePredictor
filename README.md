@@ -1,7 +1,6 @@
 # StockPricePredictor
 
-Web app that **visualizes historical stock prices** and **predicts the closing price** using an **LSTM** model trained on technical indicators.  
-**Frontend:** Angular • **Backend:** Python/Flask • **Data:** Yahoo Finance (`yfinance`) • **DB:** MySQL • **Auth:** JWT
+Web app that **visualizes historical stock prices** and **predicts the closing price** using an **LSTM** model trained on technical indicators.
 
 ---
 
@@ -37,14 +36,12 @@ Web app that **visualizes historical stock prices** and **predicts the closing p
 - **Input features (per day):** `Open`, `Close`, `Williams %R`, `RSI`
 - **Window:** last **10** days → model input
 - **Target:** `Close` **+6 days**
-
-**Network (example):**  
+- **Network (example):**  
 `LSTM(64, return_sequences)` → `Dropout(0.3)` →  
 `LSTM(128)` → `Dropout(0.3)` →  
 `Dense(256, activation=tanh, HeUniform)` → `Dropout(0.3)` →  
 `Dense(128, activation=tanh, HeUniform)` → `Dropout(0.3)` →  
 `Dense(1)`
-
 - **Training:** `optimizer=Adam`, `loss=MSE`, `epochs=50`
 - **Scaling:** MinMax per time segment
 
