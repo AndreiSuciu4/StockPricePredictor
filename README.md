@@ -36,7 +36,7 @@ Web app that **visualizes historical stock prices** and **predicts the closing p
 - **Input features (per day):** `Open`, `Close`, `Williams %R`, `RSI`
 - **Window:** last **10** days → model input
 - **Target:** `Close` **+6 days**
-- **Network (example):**  
+- **Network:**  
 `LSTM(64, return_sequences)` → `Dropout(0.3)` →  
 `LSTM(128)` → `Dropout(0.3)` →  
 `Dense(256, activation=tanh, HeUniform)` → `Dropout(0.3)` →  
